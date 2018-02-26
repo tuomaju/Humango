@@ -15,11 +15,8 @@ export class TopBarComponent implements OnInit {
     }
 
     slideTop() {
-        console.log('asd');
-        console.log(document.querySelector('app-top-bar'));
         (<HTMLElement>document.querySelector('app-top-bar')).style.top = '0';
         (<HTMLElement>document.querySelector('app-main')).style.filter = 'blur(4px)';
-
     }
     closeTop () {
         (<HTMLElement>document.querySelector('app-top-bar')).style.top = 'calc(-100% + 3em)';

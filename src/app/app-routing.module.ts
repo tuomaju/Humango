@@ -1,9 +1,10 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {SettingsComponent} from './settings/settings.component';
-import {HistoryComponent} from './history/history.component';
+import {SettingsComponent} from './top-bar/top-content/settings/settings.component';
+import {HistoryComponent} from './top-bar/top-content/history/history.component';
 import {MainComponent} from './main/main.component';
-import {TopContentComponent} from './top-content/top-content.component';
+import {TopContentComponent} from './top-bar/top-content/top-content.component';
+import {MangotreeComponent} from './top-bar/mangotree/mangotree.component';
 
 const routes: Routes = [
     {
@@ -11,20 +12,29 @@ const routes: Routes = [
         component: MainComponent
     },
     {
-        path: 'top-content',
+        path: '',
         component: TopContentComponent
     },
     {
-        path: 'settings',
-        component: SettingsComponent,
+        path: 'topContent',
+        component: TopContentComponent,
+        children: [
+            {
+                path: 'settings',
+                component: SettingsComponent
+            },
+            {
+                path: '',
+                component: HistoryComponent
+            },
+            {
+                path: 'history',
+                component: HistoryComponent
+            }
+        ]
     },
     {
-        path: 'history',
-        component: HistoryComponent,
-    },
-    {
-        path: '',
-        component: HistoryComponent,
+        path: 'mangotree', component: MangotreeComponent
     }
 
 ];
