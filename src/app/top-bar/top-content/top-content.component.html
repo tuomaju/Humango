@@ -1,4 +1,8 @@
-<a id="routeTree" [routerLink]="['/mangotree']">mangotree</a>
+<h1 id="userName">Masa Mallikas</h1>
+
+<div id="routeTree" [routerLink]="['/mangotree']">
+    <p>mangotree</p>
+</div>
 
 <div id="routerContainer">
     <div id="tabContainer">
@@ -7,4 +11,13 @@
     </div>
     <router-outlet></router-outlet>
 </div>
-
+<nav>
+    <ul>
+        <li (click)="slideTop()">
+            <p>👇️</p>
+        </li>
+        <li (click)="closeTop()">
+            <p>☝️</p>
+        </li>
+    </ul>
+</nav>
