@@ -1,0 +1,13 @@
+<h1 id="userName">Masa Mallikas</h1>
+
+<div id="routeTree" [routerLink]="['/mangotree']">
+    <p>mangotree</p>
+</div>
+
+<div id="routerContainer">
+    <div id="tabContainer">
+        <a [routerLink]="['history']" >history</a>
+        <a [routerLink]="['settings']" >settings</a>
+    </div>
+    <router-outlet></router-outlet>
+</div>
