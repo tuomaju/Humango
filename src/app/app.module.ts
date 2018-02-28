@@ -11,6 +11,7 @@ import { HistoryComponent } from './top-bar/top-content/history/history.componen
 import { TopContentComponent } from './top-bar/top-content/top-content.component';
 import { MangotreeComponent } from './top-bar/mangotree/mangotree.component';
 import { MapComponent } from './map/map.component';
+import { ModalComponent } from './modal/modal.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { MapComponent } from './map/map.component';
     HistoryComponent,
     TopContentComponent,
     MangotreeComponent,
-    MapComponent
+    MapComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

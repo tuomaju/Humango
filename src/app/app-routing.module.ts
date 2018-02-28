@@ -8,10 +8,10 @@ import {MangotreeComponent} from './top-bar/mangotree/mangotree.component';
 
 const routes: Routes = [
     {
-        path: 'main',
-        component: MainComponent
-    },
-    {
+        path: '',
+        redirectTo: '/topContent',
+        pathMatch: 'full'
+    }, {
         path: '',
         component: TopContentComponent
     },
