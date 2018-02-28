@@ -1,0 +1,13 @@
+<h1 id="userName">Masa Mallikas</h1>
+
+<div id="routeTree" [routerLink]="['/mangotree']">
+    <img src="../../../assets/img/mangopuu1.png">
+</div>
+
+<div id="routerContainer">
+    <div id="tabContainer">
+        <a [routerLink]="['history']" >historia</a>
+        <a [routerLink]="['settings']" >asetukset</a>
+    </div>
+    <router-outlet></router-outlet>
+</div>

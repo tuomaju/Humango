@@ -1,0 +1,30 @@
+@import '../../assets/_colours.scss';
+
+:host {
+  z-index: 9;
+  box-shadow: 0px 0px 38px -5px rgba(0,0,0,0.55);
+  height: 4rem;
+  background-color: $primary-green;
+  background-image: url("../../assets/img/taustapilvi.svg");
+  background-repeat: no-repeat;
+  background-size: 200% 200%;
+  background-position-x: -12rem;
+  background-position-y: -1.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    height: 3rem;
+    width: 3rem;
+   margin-right: -0.8rem;
+  }
+  h3 {
+  //  background-color: $light-grey;
+
+    filter: alpha(opacity=60);
+    color: $dark-grey;
+    padding-right: 3rem;
+  }
+}
