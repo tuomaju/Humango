@@ -12,6 +12,8 @@ import { TopContentComponent } from './top-bar/top-content/top-content.component
 import { MangotreeComponent } from './top-bar/mangotree/mangotree.component';
 import { MapComponent } from './map/map.component';
 import { LogoBoxComponent } from './logo-box/logo-box.component';
+import { ModalComponent } from './modal/modal.component';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -24,11 +26,13 @@ import { LogoBoxComponent } from './logo-box/logo-box.component';
     TopContentComponent,
     MangotreeComponent,
     MapComponent,
-    LogoBoxComponent
+    LogoBoxComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+      HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,4 +12,12 @@ export class MainComponent implements OnInit {
   ngOnInit() {
   }
 
+    openModal() {
+        (<HTMLElement>document.querySelector('app-main')).style.filter = 'blur(10px)';
+        (<HTMLElement>document.querySelector('app-logo-box')).style.filter = 'blur(10px)';
+        (<HTMLElement>document.querySelector('app-modal')).style.top = '0';
+        (<HTMLElement>document.querySelector('app-modal')).style.backgroundColor = 'rgba(0, 0, 0, 0.20)';
+        (<HTMLElement>document.querySelector('#modal')).style.opacity = '1';
+    }
+
 }

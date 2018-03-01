@@ -8,7 +8,7 @@ import {Component} from '@angular/core';
 export class AppComponent {
     title = 'app';
 
-    open: Boolean;
+    open = true;
 
     openTop() {
         (<HTMLElement>document.querySelector('app-top-bar')).style.top = '0';
@@ -16,12 +16,13 @@ export class AppComponent {
         this.open = true;
 
     }
-
+/*
     closeTop() {
         (<HTMLElement>document.querySelector('app-top-bar')).style.top = 'calc(-100%)';
         (<HTMLElement>document.querySelector('app-main')).style.filter = 'blur(0px)';
         this.open = false;
     }
+
 
     slideTopBar() {
         if (this.open === true) {
@@ -33,4 +34,5 @@ export class AppComponent {
         }
 
     }
+    */
 }
