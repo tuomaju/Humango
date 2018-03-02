@@ -1,39 +1,72 @@
 @import "../../../assets/colours";
 :host {
   display: flex;
-
+  flex-direction: column;
   width: 100%;
   height: 100%;
+ align-items: center;
  // background-image: url('../../../assets/img/puu2eitaustaa.gif');
  // background-size: 100% 100%;
 //  background-repeat: no-repeat;
   margin-bottom: 3rem;
   overflow: hidden;
 }
+.top {
+  display: flex;
+  width: 100%;
+  height: 85%;
+}
+a {
+  z-index: 9;
+  top: 0;
+  left: 0;
+  width: 2rem;
+  color: $dark-grey;
+  margin: 1rem;
+}
 
 main {
   height: 100%;
   display: flex;
   white-space:nowrap;
-  width: 100%;
+  width: calc(100% - 6rem);
   justify-content: center;
 
+  video {
+    display: none;
+    top:0;
+    bottom: 0;
+   transform: translateX(-1%);
+   // height: 85%;
+    background-color: $primary-green;
+    // background-image: url('../../../assets/img/puupaikallaan1_3.mp4');
+    background-position: center center;
+    background-size: contain;
+  }
 }
-a {
-  z-index: 9;
 
-  top: 0;
-  left: 0;
-}
+#progressBox {
+  margin-top: 2rem;
+  width: 80%;
+  max-width: 915px;
+  height: 3rem;
+  background-color: $light-grey;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border-radius: 3px;
 
-video {
-  display: none;
-  top:0;
-  bottom: 0;
-  transform: translateX(-3%);
-  height: 85%;
-  background-color: $primary-green;
-  // background-image: url('../../../assets/img/puupaikallaan1_3.mp4');
-  background-position: center center;
-  background-size: contain;
+
+  #progressNumbers {
+    display: flex;
+    flex-direction: row;
+  }
+  #progressBar {
+    border-radius: 3px;
+    height: 2rem;
+    width: 10%;
+    max-width: 85%;
+    background-color: $mango;
+  }
 }
