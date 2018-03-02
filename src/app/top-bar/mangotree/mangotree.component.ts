@@ -10,6 +10,12 @@ export class MangotreeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+     this.playVideo();
+  }
+
+  playVideo () {
+      (<HTMLElement>document.querySelector('video')).style.display = 'inline-block';
+      //document.querySelector('video').play;
   }
 
 }

@@ -15,5 +15,7 @@ export class TopContentComponent implements OnInit {
     ngOnInit() {
     }
 
-
+    showVideo () {
+        (<HTMLElement>document.querySelector('video')).style.display = 'inline-block';
+    }
 }

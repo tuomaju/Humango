@@ -1,11 +1,14 @@
+@import "../../../assets/colours";
 :host {
   display: flex;
+
   width: 100%;
   height: 100%;
-  background-image: url('../../../assets/img/puu2eitaustaa.gif');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+ // background-image: url('../../../assets/img/puu2eitaustaa.gif');
+ // background-size: 100% 100%;
+//  background-repeat: no-repeat;
   margin-bottom: 3rem;
+  overflow: hidden;
 }
 
 main {
@@ -16,11 +19,21 @@ main {
   justify-content: center;
 
 }
-img{
+a {
+  z-index: 9;
 
-  display:inline-block;
+  top: 0;
+  left: 0;
+}
 
-  height: 25rem;
-
-  align-self: flex-end;
+video {
+  display: none;
+  top:0;
+  bottom: 0;
+  transform: translateX(-3%);
+  height: 85%;
+  background-color: $primary-green;
+  // background-image: url('../../../assets/img/puupaikallaan1_3.mp4');
+  background-position: center center;
+  background-size: contain;
 }
