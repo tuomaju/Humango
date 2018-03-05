@@ -13,12 +13,28 @@
   border-radius: 0 0 3px 3px;
   background-color: $dark-grey;
 
-  p {
+}
+ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+
+  li {
     background-color: $light-grey;
     color: $dark-grey;
     padding: 1rem;
     width: calc(100% - 2rem);
+  //  height: 4rem;
     margin: 1rem 0 0 0;
     border-radius: 3px;
+    list-style: none;
+  }
+  p {
+    margin: 0;
+    padding: 0;
+
   }
 }
