@@ -1,15 +1,88 @@
 {
-  "haaste":
-  [
-    "Istu julkisessa kulkuvälineessä tuntemattoman viereen.",
-    "Luo katsekontakti.",
-    "Käy ostoksilla uudessa kaupassa.",
-    "Kehu ystävääsi.",
-    "Kehu äitiä.",
-    "Kävele koko päivä selkä suorana.",
-    "Tee lista vahvuuksistasi.",
-    "Soita vanhalle ystävälle.",
-    "Kokeile uutta harrastusta.",
-    "Käytä huumeita."
+  "haaste": [
+    {
+      "id": 1,
+      "aste": 1,
+      "kategoria": "ihmiset",
+      "h": "Luo katsekontakti.",
+      "i": "Katso jotain ihmistä silmiin niin että hän katsoo sinua takaisin."
+    },
+    {
+      "id": 2,
+      "aste": 1,
+      "kategoria": "ihmiset",
+      "h": "Istu julkisessa kulkuvälineessä tuntemattoman viereen.",
+      "i": "Mene pois mukavuusalueeltasi ja valitse paikka jonkun vierestä esimerkiksi bussissa."
+    },
+    {
+      "id": 3,
+      "aste": 2,
+      "kategoria": "ihmiset",
+      "h": "Kehu samaa sukupuolta olevaa henkilöä.",
+      "i": "Kehu esimerkiksi jotain kaveriasi."
+    },
+    {
+      "id": 4,
+      "aste": 3,
+      "kategoria": "ihmiset",
+      "h": "Kysy lähimmän ihmisen kuulumiset.",
+      "i": "Katso ympärillesi ja kysy lähimmältä ihmiseltä kuulumiset."
+    },
+    {
+      "id": 5,
+      "aste": 1,
+      "kategoria": "paikat",
+      "h": "Käy ostoksilla uudessa kaupassa.",
+      "i": "Kun olet menossa ostoksille, valitse tällä kertaa jokin aivan uusi kauppa."
+    },
+    {
+      "id": 6,
+      "aste": 1,
+      "kategoria": "paikat",
+      "h": "Käy kirjastossa lainaamassa jotain.",
+      "i": "Mene kirjastoon ja lainaa esimerkiksi kirja."
+    },
+    {
+      "id": 7,
+      "aste": 2,
+      "kategoria": "paikat",
+      "h": "Käy jossain tapahtumassa.",
+      "i": "Ota selvää lähellä olevista tapahtumista ja valitse missä käyt. Tapahtuma voi olla ilmainen pientapahtuma tai jokin isompi tapahtuma."
+    },
+    {
+      "id": 8,
+      "aste": 3,
+      "kategoria": "paikat",
+      "h": "Käy uimahallissa.",
+      "i": "Mene uimahalliin ja mene joko uimaan tai saunomaan"
+    },
+    {
+      "id": 9,
+      "aste": 1,
+      "kategoria": "itse",
+      "h": "Listaa ainakin 5 hyvää ominaisuutta itsessäsi..",
+      "i": "Ajattele vahvuuksiasi tai muita hyviä ominaisuuksia itsessäsi. Kirjaa ylös vähintään 5 niistä."
+    },
+    {
+      "id": 10,
+      "aste": 1,
+      "kategoria": "itse",
+      "h": "Pyri kävelemään koko päivä itsevarmasti.",
+      "i": "Kävele tänään hyvässä ryhdissä ja eteenpäin katsoen."
+    },
+    {
+      "id": 11,
+      "aste": 2,
+      "kategoria": "itse",
+      "h": "Kokeile uutta harrastusta.",
+      "i": "Mieti mikä harrastus sinua kiinnostaa ja käy kokeilemassa. Harrastus voi olla ilmainen ja itsenäinen esimerkiksi aikuisten värityskirjat."
+    },
+    {
+      "id": 12,
+      "aste": 3,
+      "kategoria": "itse",
+      "h": "Ilmaise mielipiteesi jotain asiaa vastaan.",
+      "i": "Soita esimerkiksi asiakaspalveluun, jos et ole tyytyväinen heidän palveluun ja anna heille palautetta."
+    }
   ]
 }
