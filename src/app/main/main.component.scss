@@ -1,0 +1,36 @@
+@import '../../assets/colours';
+
+:host {
+  display: flex;
+  width: 100%;
+  height: calc(100% - 4rem);
+
+  background-color: #cccccc;
+
+
+  filter: blur(0px);
+  z-index: -2;
+  transition-duration: 0.5s;
+
+  #haasteBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+
+    height: 4rem;
+    width: 4rem;
+    border-radius: 3px;
+
+    box-shadow: 0px 0px 15px -5px rgba(0,0,0,0.45);
+    background-color: $primary-green;
+    color: $dark-grey;
+
+    z-index: 1;
+
+  }
+
+}
