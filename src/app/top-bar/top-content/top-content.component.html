@@ -1,9 +1,9 @@
 <h1 id="userName">Masa Mallikas</h1>
 <div id="topButtons">
-    <div id="routeTree" [routerLink]="['/mangotree']" >
+    <div id="routeTree" (click)="navigateMangotree()" >
         <img src="../../../assets/img/mangopuu1.png">
     </div>
-    <div id="moti">
+    <div id="moti" (click)="navigateMotivation()">
         <i class="fas fa-question"></i>
     </div>
 </div>
@@ -11,10 +11,10 @@
 <div id="routerContainer">
     <div id="tabContainer">
 
-            <a id="history" [routerLink]="['history']" ><i class="fas fa-list-ul"></i></a>
+            <a id="history" (click)="navigateHistory() " ><i class="fas fa-list-ul"></i></a>
 
-            <a id="settings" [routerLink]="['settings']" ><i class="fas fa-cog"></i></a>
+            <a id="settings" (click)="navigateSettings()"  ><i class="fas fa-cog"></i></a>
 
     </div>
-    <router-outlet></router-outlet>
+    <router-outlet name="historyOutlet"></router-outlet>
 </div>

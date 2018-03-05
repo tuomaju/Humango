@@ -5,39 +5,52 @@ import {HistoryComponent} from './top-bar/top-content/history/history.component'
 import {MainComponent} from './main/main.component';
 import {TopContentComponent} from './top-bar/top-content/top-content.component';
 import {MangotreeComponent} from './top-bar/mangotree/mangotree.component';
+import {NewChallengeComponent} from './modal/new-challenge/new-challenge.component';
+import {MotivationComponent} from './motivation/motivation.component';
 
 const routes: Routes = [
     {
-        path: 'main',
-        component: MainComponent
-    },
-    {
         path: '',
-        redirectTo: '/topContent',
+        redirectTo: '',
         pathMatch: 'full'
     },
     {
         path: 'topContent',
         component: TopContentComponent,
+        outlet: 'topOutlet',
         children: [
             {
                 path: 'settings',
-                component: SettingsComponent
+                component: SettingsComponent,
+                outlet: 'historyOutlet'
             },
             {
                 path: '',
-                component: HistoryComponent
+                component: HistoryComponent,
+                outlet: 'historyOutlet'
             },
             {
                 path: 'history',
-                component: HistoryComponent
+                component: HistoryComponent,
+                outlet: 'historyOutlet'
             }
         ]
     },
     {
-        path: 'mangotree', component: MangotreeComponent
+        path: 'mangotree',
+        component: MangotreeComponent,
+        outlet: 'topOutlet'
+    },
+    {
+        path: 'motivation',
+        component: MotivationComponent,
+        outlet: 'topOutlet'
+    },
+    {
+        path: 'newChallenge',
+        component: NewChallengeComponent,
+        outlet: 'modalOutlet'
     }
-
 ];
 
 @NgModule({

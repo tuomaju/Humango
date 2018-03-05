@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-mangotree',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MangotreeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
      this.playVideo();
@@ -33,5 +35,9 @@ export class MangotreeComponent implements OnInit {
     video2 () {
         document.querySelector('video').src = '../../../assets/img/mangopuu2tausta.mp4';
         document.querySelector('video').loop = true;
+    }
+
+    navigateTopContent() {
+        this.router.navigate([{outlets: {topOutlet: ['topContent']}}], {skipLocationChange: true});
     }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-logo-box',
@@ -8,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class LogoBoxComponent implements OnInit {
 
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
+    openTop() {
+        (<HTMLElement>document.querySelector('app-top-bar')).style.top = '0';
+        (<HTMLElement>document.querySelector('app-main')).style.filter = 'blur(10px)';
+        this.router.navigate([{ outlets: { topOutlet: ['topContent'] } }], { skipLocationChange: true });
+
+    }
 
 }

@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
     selector: 'app-top-bar',
@@ -7,40 +8,23 @@ import {Component, OnInit} from '@angular/core';
 })
 export class TopBarComponent implements OnInit {
 
-    open = true;
 
-    constructor() {
+    constructor(private router: Router,
+                private route: ActivatedRoute) {
     }
 
 
     ngOnInit() {
     }
 
-/*
-    openTop() {
-        (<HTMLElement>document.querySelector('app-top-bar')).style.top = '0';
-        (<HTMLElement>document.querySelector('app-main')).style.filter = 'blur(10px)';
-        this.open = true;
-
-    }
-    */
-
     closeTop() {
         (<HTMLElement>document.querySelector('app-top-bar')).style.top = 'calc(-100%)';
         (<HTMLElement>document.querySelector('app-main')).style.filter = 'blur(0px)';
-        this.open = false;
-    }
-/*
-    slideTopBar() {
-        if (this.open === true) {
-            console.log(this.open);
-            this.closeTop();
-        } else {
-            console.log(this.open);
-            this.openTop();
-        }
+        setTimeout(() => {
+            this.router.navigate(['../']);
+        }, 500);
 
     }
-    */
+
 
 }

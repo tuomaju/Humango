@@ -1,17 +1,22 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
-    selector: 'app-modal',
-    templateUrl: './modal.component.html',
-    styleUrls: ['./modal.component.scss']
+  selector: 'app-new-challenge',
+  templateUrl: './new-challenge.component.html',
+  styleUrls: ['./new-challenge.component.scss']
 })
-export class ModalComponent implements OnInit {
+export class NewChallengeComponent implements OnInit {
+
+
 
     tulos = '';
     randomi: any;
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient,
+                private router: Router,
+                private route: ActivatedRoute) {
     }
 
     ngOnInit() {
@@ -41,4 +46,5 @@ export class ModalComponent implements OnInit {
         }, 500);
 
     }
+
 }

@@ -14,6 +14,8 @@ import { MapComponent } from './map/map.component';
 import { LogoBoxComponent } from './logo-box/logo-box.component';
 import { ModalComponent } from './modal/modal.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { NewChallengeComponent } from './modal/new-challenge/new-challenge.component';
+import { MotivationComponent } from './motivation/motivation.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     MangotreeComponent,
     MapComponent,
     LogoBoxComponent,
-    ModalComponent
+    ModalComponent,
+    NewChallengeComponent,
+    MotivationComponent
   ],
   imports: [
     BrowserModule,
