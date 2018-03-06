@@ -1,0 +1,139 @@
+@import '../../../assets/colours';
+
+%historySettings {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+
+
+  width: 100%;
+  height: 100%;
+}
+
+
+:host{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+
+  #userName {
+    margin: 1rem;
+    margin-bottom: 0;
+    color: $dark-grey;
+  }
+#topButtons {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+  width: 100%;
+height: 15rem;
+
+  #routeTree {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    margin-bot: 1rem;
+
+    padding: 0.5rem;
+
+    width: 4rem;
+    height: 4rem;
+
+    border-radius: 2px;
+
+    color: $dark-grey;
+    background-color: $light-grey;
+
+    img {
+      margin: 0;
+      padding: 0;
+
+      width: 4rem;
+    }
+  }
+
+  #moti {
+  //  margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.5rem;
+    margin-top: auto;
+    margin-bottom: 1rem;
+
+    width: 100%;
+    height: 1rem;
+
+    border-radius: 2px;
+
+    color: $mango;
+    font-weight: bold;
+   // color: $dark-grey;
+   // background-color: $light-grey;
+  }
+}
+  #routerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 80%;
+    height: 100%;
+
+    margin: 2rem;
+    margin-top:0;
+    padding-bottom: 1rem;
+    margin-bottom: 4rem;
+    border-radius: 3px;
+
+    color: $light-grey;
+    background-color: $dark-grey;
+
+    #tabContainer {
+
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      width: 100%;
+      height: 4rem;
+
+      border-radius: 3px 3px 0 0;
+
+      background-color: $dark-grey;
+
+      #history {
+        @extend %historySettings;
+        background-color: $dark-grey;
+        color: $light-grey;
+        border-radius: 3px 0 0 0;
+      }
+
+      #settings {
+        @extend %historySettings;
+        background-color: $light-grey;
+        color: $dark-grey;
+        border-radius: 0 3px 0 0;
+      }
+
+    }
+
+  }
+
+
+}
