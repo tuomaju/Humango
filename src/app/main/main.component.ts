@@ -20,7 +20,13 @@ export class MainComponent implements OnInit {
         (<HTMLElement>document.querySelector('app-modal')).style.top = '0';
         (<HTMLElement>document.querySelector('app-modal')).style.backgroundColor = 'rgba(0, 0, 0, 0.20)';
         (<HTMLElement>document.querySelector('#modal')).style.opacity = '1';
-        this.router.navigate([{outlets: {modalOutlet: ['newChallenge']}}], {skipLocationChange: true, relativeTo: this.route});
+
+
+        if (localStorage.getItem('accepted') ) {
+            this.router.navigate([{outlets: {modalOutlet: ['acceptedChallenge']}}], {skipLocationChange: true, relativeTo: this.route});
+        } else {
+            this.router.navigate([{outlets: {modalOutlet: ['newChallenge']}}], {skipLocationChange: true, relativeTo: this.route});
+        }
     }
 
 }

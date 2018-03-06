@@ -7,6 +7,9 @@ import {TopContentComponent} from './top-bar/top-content/top-content.component';
 import {MangotreeComponent} from './top-bar/mangotree/mangotree.component';
 import {NewChallengeComponent} from './modal/new-challenge/new-challenge.component';
 import {MotivationComponent} from './motivation/motivation.component';
+import {InfoComponent} from './info/info.component';
+import {CommentComponent} from './comment/comment.component';
+import {AcceptedChallengeComponent} from './accepted-challenge/accepted-challenge.component';
 
 const routes: Routes = [
     {
@@ -49,6 +52,21 @@ const routes: Routes = [
     {
         path: 'newChallenge',
         component: NewChallengeComponent,
+        outlet: 'modalOutlet'
+    },
+    {
+        path: 'info',
+        component: InfoComponent,
+        outlet: 'modalOutlet'
+    },
+    {
+        path: 'acceptedChallenge',
+        component: AcceptedChallengeComponent,
+        outlet: 'modalOutlet'
+    },
+    {
+        path: 'comment',
+        component: CommentComponent,
         outlet: 'modalOutlet'
     }
 ];

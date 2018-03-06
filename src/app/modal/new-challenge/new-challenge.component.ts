@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
-  selector: 'app-new-challenge',
-  templateUrl: './new-challenge.component.html',
-  styleUrls: ['./new-challenge.component.scss']
+    selector: 'app-new-challenge',
+    templateUrl: './new-challenge.component.html',
+    styleUrls: ['./new-challenge.component.scss']
 })
 export class NewChallengeComponent implements OnInit {
 
 
-
+    haasteId: any;
     tulos = '';
     randomi: any;
 
@@ -20,10 +20,31 @@ export class NewChallengeComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.otaHaaste();
+        this.haasteId = localStorage.getItem('haasteId');
+        if (!this.haasteId) {
+            this.newChallenge();
+            console.log('get');
+        } else {
+            this.getChallenge();
+            console.log('new');
+        }
+
     }
 
-    otaHaaste() {
+    getChallenge() {
+        interface Myinterface {
+            haaste: any;
+        }
+
+        this.http.get<Myinterface>('assets/data.json').subscribe(data => {
+            console.log(data);
+            this.tulos = data.haaste[this.haasteId].h;
+            // this.haasteId = data.haaste[this.randomi].id;
+            //  localStorage.setItem('infoId', this.haasteId);
+        });
+    }
+
+    newChallenge() {
         this.randomi = Math.floor((Math.random() * 9) + 1);
 
         interface Myinterface {
@@ -33,7 +54,21 @@ export class NewChallengeComponent implements OnInit {
         this.http.get<Myinterface>('assets/data.json').subscribe(data => {
             console.log(data);
             this.tulos = data.haaste[this.randomi].h;
+            this.haasteId = data.haaste[this.randomi].id;
+            localStorage.setItem('haasteId', this.haasteId);
         });
+    }
+
+    acceptChallenge() {
+        localStorage.setItem('accepted', 'accepted' );
+        this.navigateAccepted();
+    }
+
+    navigateInfo() {
+        this.router.navigate([{outlets: {modalOutlet: ['info']}}], {skipLocationChange: true});
+    }
+    navigateAccepted() {
+        this.router.navigate([{outlets: {modalOutlet: ['acceptedChallenge']}}], {skipLocationChange: true});
     }
 
     closeModal() {

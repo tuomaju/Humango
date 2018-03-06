@@ -16,6 +16,9 @@ import { ModalComponent } from './modal/modal.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { NewChallengeComponent } from './modal/new-challenge/new-challenge.component';
 import { MotivationComponent } from './motivation/motivation.component';
+import { InfoComponent } from './info/info.component';
+import { CommentComponent } from './comment/comment.component';
+import { AcceptedChallengeComponent } from './accepted-challenge/accepted-challenge.component';
 
 
 @NgModule({
@@ -31,7 +34,10 @@ import { MotivationComponent } from './motivation/motivation.component';
     LogoBoxComponent,
     ModalComponent,
     NewChallengeComponent,
-    MotivationComponent
+    MotivationComponent,
+    InfoComponent,
+    CommentComponent,
+    AcceptedChallengeComponent
   ],
   imports: [
     BrowserModule,

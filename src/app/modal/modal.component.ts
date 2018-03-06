@@ -15,9 +15,9 @@ export class ModalComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.otaHaaste();
+       // this.otaHaaste();
     }
-
+/*
     otaHaaste() {
         this.randomi = Math.floor((Math.random() * 9) + 1);
 
@@ -30,7 +30,7 @@ export class ModalComponent implements OnInit {
             this.tulos = data.haaste[this.randomi].h;
         });
     }
-
+*/
     closeModal() {
         (<HTMLElement>document.querySelector('app-logo-box nav')).style.filter = 'blur(0px)';
         (<HTMLElement>document.querySelector('app-main')).style.filter = 'blur(0px)';
