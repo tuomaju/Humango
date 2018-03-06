@@ -27,7 +27,7 @@ export class ModalComponent implements OnInit {
 
         this.http.get<Myinterface>('assets/data.json').subscribe(data => {
             console.log(data);
-            this.tulos = data.haaste[this.randomi];
+            this.tulos = data.haaste[this.randomi].h;
         });
     }
 
