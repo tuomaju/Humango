@@ -4,6 +4,8 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
+  overflow: auto;
+
 }
 .back {
   padding: 1rem;
@@ -12,16 +14,22 @@ a {
   color: $dark-grey;
 
 }
-.top {
-  background-color: $light-grey;
+.container {
+
   height: 100%;
  // width: 100%;
   margin: 2rem;
+  margin-top:0;
   margin-bottom: 4rem;
-  border-radius: 3px;
+
   display: flex;
   flex-direction: column;
 
+.box{
+  background-color: $light-grey;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+}
   h2{
     color: $dark-grey;
     font-style: italic;
@@ -37,6 +45,10 @@ a {
     text-align: center;
     color: $dark-grey;
   }
+  #linkit {
+
+    overflow: auto;
+  }
   ul {
     li {
       list-style: none;
@@ -44,9 +56,12 @@ a {
   }
   #edit {
     align-self: flex-end;
-    margin-top: auto;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
+   // margin-top: auto;
+ //   margin-right: 1rem;
+   // margin-bottom: 1rem;
+    margin-bottom: 0;
+    padding: 0.5rem 1rem;
+    background-color: $mango;
   }
 
 }

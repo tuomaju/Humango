@@ -24,7 +24,7 @@ export class MangotreeComponent implements OnInit {
   }
 
   grow() {
-      document.querySelector('video').src = '../../../assets/img/mangopuu1tausta.mp4';
+      document.querySelector('video').src = './assets/img/mangopuu1tausta.mp4';
       document.querySelector('video').loop = false;
       setTimeout(() => {
           this.video2();
@@ -33,7 +33,7 @@ export class MangotreeComponent implements OnInit {
 
 
     video2 () {
-        document.querySelector('video').src = '../../../assets/img/mangopuu2tausta.mp4';
+        document.querySelector('video').src = './assets/img/mangopuu2tausta.mp4';
         document.querySelector('video').loop = true;
     }
 
