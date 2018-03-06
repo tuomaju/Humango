@@ -1,0 +1,52 @@
+@import "../../assets/colours";
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.back {
+  padding: 1rem;
+}
+a {
+  color: $dark-grey;
+
+}
+.top {
+  background-color: $light-grey;
+  height: 100%;
+ // width: 100%;
+  margin: 2rem;
+  margin-bottom: 4rem;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+
+  h2{
+    color: $dark-grey;
+    font-style: italic;
+    text-align: center;
+  }
+
+  h4 {
+    color: $dark-grey;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  p {
+    text-align: center;
+    color: $dark-grey;
+  }
+  ul {
+    li {
+      list-style: none;
+    }
+  }
+  #edit {
+    align-self: flex-end;
+    margin-top: auto;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+
+}
