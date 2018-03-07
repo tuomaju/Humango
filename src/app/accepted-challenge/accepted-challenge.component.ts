@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
+import {PointsService} from '../points.service';
 
 @Component({
     selector: 'app-accepted-challenge',
@@ -11,15 +12,18 @@ export class AcceptedChallengeComponent implements OnInit {
 
     constructor(private http: HttpClient,
                 private router: Router,
-                private route: ActivatedRoute) {
+                private route: ActivatedRoute,
+                private pointsService: PointsService) {
     }
 
     tulos: '';
     id: any;
+    point: any;
 
     ngOnInit() {
         this.id = localStorage.getItem('haasteId');
         this.getChallenge();
+        this.pointsService.previousPoints();
     }
 
 
@@ -36,12 +40,25 @@ export class AcceptedChallengeComponent implements OnInit {
         });
     }
 
+    getPoint() {
+        interface Myinterface {
+            haaste: any;
+        }
+
+        this.http.get<Myinterface>('assets/data.json').subscribe(data => {
+            console.log(data.haaste[this.id].aste);
+        this.point = data.haaste[this.id].aste;
+        this.pointsService.addPoints(this.point);
+        });
+    }
+
     navigateModal() {
         this.router.navigate([{outlets: {modalOutlet: ['newChallenge']}}], {skipLocationChange: true});
 
     }
 
     navigateComment() {
+        this.getPoint();
         this.router.navigate([{outlets: {modalOutlet: ['comment']}}], {skipLocationChange: true});
     }
 

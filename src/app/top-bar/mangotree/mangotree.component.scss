@@ -58,6 +58,9 @@ main {
   padding: 0.5rem;
   border-radius: 3px;
 
+  #kasva {
+    display: none;
+  }
 
   #progressNumbers {
     display: flex;
@@ -66,7 +69,7 @@ main {
   #progressBar {
     border-radius: 3px;
     height: 2rem;
-    width: 10%;
+  //  width: 10%;
     max-width: 85%;
     background-color: $mango;
   }

@@ -20,6 +20,7 @@ import { InfoComponent } from './info/info.component';
 import { CommentComponent } from './comment/comment.component';
 import { AcceptedChallengeComponent } from './accepted-challenge/accepted-challenge.component';
 import { NewMapComponent } from './main/new-map/new-map.component';
+import {PointsService} from './points.service';
 
 
 @NgModule({
@@ -46,7 +47,7 @@ import { NewMapComponent } from './main/new-map/new-map.component';
     AppRoutingModule,
       HttpClientModule
   ],
-  providers: [],
+  providers: [PointsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

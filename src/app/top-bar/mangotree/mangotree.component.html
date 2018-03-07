@@ -4,11 +4,12 @@
         <video autoplay loop id="video" src="./assets/img/puupaikallaan1_3.mp4"></video>
     </main>
 </div>
-<div id="progressBox" (click)="grow()">
+<div id="progressBox" (click)="grow()" >
     <div id="progressBar"></div>
+    <p id="kasva">KASVA</p>
     <div id="progressNumbers">
-        <p id="progressNumber">2</p>
+        <p id="progressNumber"> {{ currentPoints }}</p>
         <p>/</p>
-        <p id="progressGoal">20</p>
+        <p id="progressGoal">{{ targetPoints }}</p>
     </div>
 </div>
