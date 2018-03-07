@@ -19,6 +19,7 @@
 
   ul {
     width: 100%;
+    height:70%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,6 +40,43 @@
       margin: 0;
       padding: 0;
 
+    }
+  }
+
+  #moti {
+    //  margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.5rem;
+    // margin-top: auto;
+    // margin-bottom: 1rem;
+
+    width: 100%;
+   height: 30%;
+
+    border-radius: 2px;
+
+    color: $mango;
+    font-weight: bold;
+    // color: $dark-grey;
+    // background-color: $light-grey;
+
+    img {
+      width: 100%;
+      height: 90%;
+      transform: scaleX(-1);
+      margin: 0;
+     // padding: 0.5rem;
+      // filter: FlipH;
+      // -ms-filter: "FlipH";
+    }
+    p {
+      margin: 0;
+     // margin-top: 1rem;
+      padding: 0;
     }
   }
 }

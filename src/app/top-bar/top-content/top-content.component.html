@@ -1,20 +1,24 @@
-<h1 id="userName">Masa Mallikas</h1>
-<div id="topButtons">
-    <div id="routeTree" (click)="navigateMangotree()" >
+<div id="top">
+    <h2 id="userName">Masa Mallikas</h2>
+   <!-- <div id="moti" (click)="navigateMotivation()">
+        //<i class="fas fa-question"></i>
+        //  <p>Minun mangoni</p>
+        <img src="./assets/img/logo.svg">
+    </div> -->
+</div>
+
+    <div id="routeTree" (click)="navigateMangotree()">
         <img src="./assets/img/mangopuu1.png">
     </div>
-    <div id="moti" (click)="navigateMotivation()">
-        <!--<i class="fas fa-question"></i>-->
-        <p>Minun mangoni</p>
-    </div>
-</div>
+
+
 
 <div id="routerContainer">
     <div id="tabContainer">
 
-            <a id="history" (click)="navigateHistory() " ><i class="fas fa-list-ul"></i></a>
+        <a id="history" (click)="navigateHistory() "><i class="fas fa-list-ul"></i></a>
 
-            <a id="settings" (click)="navigateSettings()"  ><i class="fas fa-cog"></i></a>
+        <a id="settings" (click)="navigateSettings()"><i class="fas fa-cog"></i></a>
 
     </div>
     <router-outlet name="historyOutlet"></router-outlet>

@@ -16,19 +16,28 @@ export class MangotreeComponent implements OnInit {
 
     currentPoints: any;
     targetPoints: any;
+    videosrc: any;
 
     ngOnInit() {
         this.pointsService.previousPoints();
         this.getPoints();
         this.pointsBar();
         this.growButton();
-
+        this.whatVideo();
         this.playVideo();
         document.querySelector('video').addEventListener('onended', () => {
             this.video2();
         });
 
     }
+
+    whatVideo() {
+        this.videosrc = './assets/img/puupaikallaan1_3.mp4';
+        if (localStorage.getItem('growth') === '1') {
+            this.videosrc = './assets/img/mangopuu2tausta.mp4';
+        }
+    }
+
 
     pointsBar() {
         document.getElementById('progressBar').style.width = this.currentPoints / this.targetPoints * 100 + '%';
@@ -37,7 +46,12 @@ export class MangotreeComponent implements OnInit {
 
     getPoints() {
         this.currentPoints = this.pointsService.getPoints();
-        this.targetPoints = 10;
+        if (localStorage.getItem('growth') === '1') {
+            this.targetPoints = 20;
+        } else {
+            this.targetPoints = 10;
+        }
+
 
     }
 
@@ -51,6 +65,7 @@ export class MangotreeComponent implements OnInit {
             // this.currentPoints = this.currentPoints - this.targetPoints;
             // localStorage.setItem('points', this.currentPoints);
         }
+
     }
 
     playVideo() {
@@ -75,10 +90,13 @@ export class MangotreeComponent implements OnInit {
             this.currentPoints = this.currentPoints - this.targetPoints;
             localStorage.setItem('points', this.currentPoints);
             console.log(this.currentPoints);
+            localStorage.setItem('growth', '1');
+            document.getElementById('progressBox').style.backgroundColor = '#E7E5DF';
+            document.getElementById('kasva').style.display = 'none';
+            document.getElementById('progressNumbers').style.display = 'flex';
+            this.targetPoints = 20;
         }
     }
-
-
 
 
     navigateTopContent() {
