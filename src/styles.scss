@@ -18,6 +18,9 @@ body {
   background-color: #e8e8e8;
 
 text-decoration: none;
+  :focus {
+    outline: none;
+  }
 }
 
 

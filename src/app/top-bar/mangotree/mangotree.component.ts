@@ -95,6 +95,7 @@ export class MangotreeComponent implements OnInit {
             document.getElementById('kasva').style.display = 'none';
             document.getElementById('progressNumbers').style.display = 'flex';
             this.targetPoints = 20;
+            this.pointsBar();
         }
     }
 

@@ -1,4 +1,5 @@
 @import "../../assets/colours";
+
 :host {
   display: flex;
   flex-direction: column;
@@ -7,61 +8,99 @@
   overflow: auto;
 
 }
+
 .back {
   padding: 1rem;
 }
+
 a {
   color: $dark-grey;
 
 }
+
 .container {
 
   height: 100%;
- // width: 100%;
-  margin: 2rem;
-  margin-top:0;
+  // width: 100%;
+  margin: 1rem;
+  margin-top: 0;
   margin-bottom: 4rem;
 
   display: flex;
   flex-direction: column;
 
-.box{
-  background-color: $light-grey;
-  border-radius: 3px;
-  margin-bottom: 1rem;
-}
-  h2{
+  .box {
+    background-color: $light-grey;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+  }
+  h2 {
     color: $dark-grey;
     font-style: italic;
     text-align: center;
+    margin-top: 0;
+  }
+#mottoEdited {
+  border: 1px solid transparent;
+}
+#tavoiteEdited {
+  border: 1px solid transparent;
+
+}
+
+  #editMotto2 {
+    display: none;
+  }
+  #editTavoite2 {
+    display: none;
   }
 
-  h4 {
-    color: $dark-grey;
-    text-align: center;
-    margin-bottom: 0;
-  }
   p {
     text-align: center;
     color: $dark-grey;
   }
-  #linkit {
 
+  #linkit {
     overflow: auto;
-  }
-  ul {
-    li {
-      list-style: none;
+    background-color: $dark-grey;
+    color: $light-grey;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    h4 {
+      color: $light-grey;
+      width: 100%;
+      text-align: center;
+    }
+    ul {
+      li {
+        list-style: none;
+        a {
+          color: $light-grey;
+        }
+      }
     }
   }
-  #edit {
+  .top {
+    display: flex;
+    flex-direction: row;
+    height: 30%;
+
+    h4 {
+      color: $dark-grey;
+      text-align: center;
+      margin-bottom: 0;
+      width: calc(100% - 3rem);
+      margin-left: 3rem;
+      margin-top: 1rem;
+    }
+  }
+  .edit {
     align-self: flex-end;
-   // margin-top: auto;
- //   margin-right: 1rem;
-   // margin-bottom: 1rem;
-    margin-bottom: 0;
-    padding: 0.5rem 1rem;
-    background-color: $mango;
+    padding: 1rem 1rem;
+    color: $mango;
+    width: 2rem;
+    margin-right: 1rem;
+  ;
   }
 
 }
