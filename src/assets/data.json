@@ -1,0 +1,101 @@
+
+{
+  "haaste": [
+    {
+      "id": 0,
+      "aste": 1,
+      "kategoria": "ihmiset",
+      "h": "Luo katsekontakti.",
+      "i": "Katso jotain ihmistä, esimerkiksi bussikuskia tai naapuria silmiin niin, että hän katsoo sinua takaisin. ",
+      "place": ""
+    },
+    {
+      "id": 1,
+      "aste": 1,
+      "kategoria": "ihmiset",
+      "h": "Istu julkisessa kulkuvälineessä tuntemattoman viereen.",
+      "i": "Mene pois mukavuusalueeltasi ja valitse paikka jonkun vierestä esimerkiksi bussissa.",
+      "place": ""
+    },
+    {
+      "id": 2,
+      "aste": 2,
+      "kategoria": "ihmiset",
+      "h": "Kehu samaa sukupuolta olevaa henkilöä.",
+      "i": "Kehu esimerkiksi jotain kaveriasi.",
+      "place": ""
+    },
+    {
+      "id": 3,
+      "aste": 3,
+      "kategoria": "ihmiset",
+      "h": "Kysy lähimmän ihmisen kuulumiset.",
+      "i": "Katso ympärillesi ja kysy lähimmältä ihmiseltä vaikka hänen päivästään tai voinnistaan, tai ylipäätään fiiliksestä.",
+      "place": ""
+    },
+    {
+      "id": 4,
+      "aste": 1,
+      "kategoria": "paikat",
+      "h": "Käy ostoksilla uudessa kaupassa.",
+      "i": "Kun olet menossa ostoksille, valitse tällä kertaa jokin aivan uusi kauppa.",
+      "place": "store"
+    },
+    {
+      "id": 5,
+      "aste": 1,
+      "kategoria": "paikat",
+      "h": "Käy kirjastossa lainaamassa jotain.",
+      "i": "Mene kirjastoon ja lainaa esimerkiksi kirja, leffa, musiikkia tai lautapeli.",
+      "place": "library"
+    },
+    {
+      "id": 6,
+      "aste": 2,
+      "kategoria": "paikat",
+      "h": "Käy jossain tapahtumassa.",
+      "i": "Ota selvää lähellä olevista tapahtumista ja valitse missä käyt. Tapahtuma voi olla ilmainen pientapahtuma tai jokin isompi tapahtuma.",
+      "place": "amusement_park, art_gallery, bar, church, hindu_temple, library, mosque, museum, night_club, stadium, synagogue, zoo "
+    },
+    {
+      "id": 7,
+      "aste": 3,
+      "kategoria": "paikat",
+      "h": "Käy uimahallissa.",
+      "i": "Mene uimahalliin ja mene joko uimaan tai saunomaan. Uimahalleissa järjestetään myös usein vesijuoksua ja muuta ohjattua toimintaa, ja niissä on mukavia porealtaita!",
+      "place": "spa"
+    },
+    {
+      "id": 8,
+      "aste": 1,
+      "kategoria": "itse",
+      "h": "Listaa ainakin 5 hyvää ominaisuutta itsessäsi.",
+      "i": "Ajattele vahvuuksiasi tai muita hyviä ominaisuuksia itsessäsi. Esimerkiksi luonteenpiirteitä, kuten ennakkoluuloton, tai taitoja, kuten hyvä ruuanlaittaja.",
+      "place": ""
+    },
+    {
+      "id": 9,
+      "aste": 1,
+      "kategoria": "itse",
+      "h": "Pyri kävelemään koko päivä itsevarmasti.",
+      "i": "Kävele tänään hyvässä ryhdissä ja eteenpäin katsoen. Pohdi, miten ryhti vaikuttaa olemukseesi ja omaan fiilikseesi.",
+      "place": ""
+    },
+    {
+      "id": 10,
+      "aste": 2,
+      "kategoria": "itse",
+      "h": "Kokeile uutta harrastusta.",
+      "i": "Mieti mikä harrastus sinua kiinnostaa ja käy kokeilemassa. Harrastus voi olla ilmainen ja itsenäinen esimerkiksi valokuvaus tai aikuisten värityskirja, tai maksullista ja ohjattua, kuten jooga tai savityöt.",
+      "place": ""
+    },
+    {
+      "id": 11,
+      "aste": 3,
+      "kategoria": "itse",
+      "h": "Ilmaise mielipiteesi jotain asiaa vastaan.",
+      "i": "Soita esimerkiksi asiakaspalveluun, jos et ole tyytyväinen heidän palveluunsa ja anna heille palautetta.",
+      "place": ""
+    }
+  ]
+}
