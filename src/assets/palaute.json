@@ -1,0 +1,25 @@
+{
+  "palautteet": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "palaute": "moi",
+      "id": 4
+    },
+    {
+      "palaute": "Haaste onnistui mielestäni hyvin",
+      "id": 5
+    },
+    {
+      "palaute": "iouou8joijoijojo",
+      "id": 6
+    }
+  ]
+}
