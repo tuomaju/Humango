@@ -55,12 +55,15 @@ export class NewChallengeComponent implements OnInit {
             console.log(data);
             this.tulos = data.haaste[this.randomi].h;
             this.haasteId = data.haaste[this.randomi].id;
+            const place = data.haaste[this.randomi].place;
             localStorage.setItem('haasteId', this.haasteId);
+            localStorage.setItem('placeType', place);
         });
     }
 
     acceptChallenge() {
         localStorage.setItem('accepted', 'accepted' );
+        this.closeModal();
         this.navigateAccepted();
     }
 
@@ -70,6 +73,7 @@ export class NewChallengeComponent implements OnInit {
     navigateAccepted() {
         this.router.navigate([{outlets: {modalOutlet: ['acceptedChallenge']}}], {skipLocationChange: true});
     }
+
 
     closeModal() {
         (<HTMLElement>document.querySelector('app-logo-box')).style.filter = 'blur(0px)';

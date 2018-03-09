@@ -24,6 +24,8 @@ export class MainComponent implements OnInit {
 
         if (localStorage.getItem('accepted') ) {
             this.router.navigate([{outlets: {modalOutlet: ['acceptedChallenge']}}], {skipLocationChange: true, relativeTo: this.route});
+        } else if (localStorage.getItem('done')) {
+            this.router.navigate([{outlets: {modalOutlet: ['comment']}}], {skipLocationChange: true, relativeTo: this.route});
         } else {
             this.router.navigate([{outlets: {modalOutlet: ['newChallenge']}}], {skipLocationChange: true, relativeTo: this.route});
         }
