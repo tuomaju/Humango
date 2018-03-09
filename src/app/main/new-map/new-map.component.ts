@@ -17,13 +17,6 @@ export class NewMapComponent implements OnInit {
     lng: any;
     x = document.querySelector('#gmap');
 
-    destinationMarker = {
-        url: './assets/img/logo.svg',
-        scaledSize: new google.maps.Size(32, 32),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(16, 16)
-
-    };
 
     ngOnInit() {
 
@@ -38,15 +31,26 @@ export class NewMapComponent implements OnInit {
 
         this.getLocation();
 
-        const location = new google.maps.LatLng(this.lat, this.lng);
 
         setTimeout(() => {
 
+            const location = new google.maps.LatLng(this.lat, this.lng);
+
+
+            const destinationMarker = {
+                url: './assets/img/logo.svg',
+                scaledSize: new google.maps.Size(42, 42),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(20, 46)
+
+            };
+
             this.initMap(location, 15);
 
-            this.searchNearby(this.map, location, 700, localStorage.getItem('placeType'));
+            this.searchNearby(this.map, location, 700, localStorage.getItem('placeType'), destinationMarker);
 
-        }, 650);
+        }, 250);
+
     }
 
     setPlaceStype(type) {
@@ -62,8 +66,28 @@ export class NewMapComponent implements OnInit {
             styles: [{}]
         });
 
+        const userMarker = {
+            url: './assets/img/loc.png',
+            scaledSize: new google.maps.Size(26, 42),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(13, 42)
+        };
+
         this.createMarker(new google.maps.LatLng(this.lat, this.lng), this.map);
 
+    }
+
+    createRadius(map, position, radius) {
+        const cityCircle = new google.maps.Circle({
+            strokeColor: '#283F3B',
+            strokeOpacity: 0.1,
+            strokeWeight: 0,
+            fillColor: '#54C27B',
+            fillOpacity: 0.15,
+            map: map,
+            center: position,
+            radius: radius
+        });
     }
 
 
@@ -77,7 +101,7 @@ export class NewMapComponent implements OnInit {
     }
 
 
-    searchNearby(map, location, radius, type) {
+    searchNearby(map, location, radius, type, markerType) {
 
         const service = new google.maps.places.PlacesService(map);
 
@@ -88,10 +112,9 @@ export class NewMapComponent implements OnInit {
         }, (results, status) => {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
                 for (let i = 0; i < results.length; i++) {
-                    this.createMarker(new google.maps.LatLng(results[i].geometry.location.lat(), results[i].geometry.location.lng()), map, this.destinationMarker);
-
-                    console.log(results[i].geometry.location.lat());
-                    console.log(results[i].geometry.location.lng());
+                    this.createMarker(new google.maps.LatLng(results[i].geometry.location.lat(), results[i].geometry.location.lng()),
+                        map,
+                        markerType);
                 }
             }
         });
