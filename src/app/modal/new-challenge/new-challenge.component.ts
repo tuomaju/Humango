@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute, Router} from '@angular/router';
+import {MapService} from '../../map.service';
 
 @Component({
     selector: 'app-new-challenge',
@@ -16,7 +17,8 @@ export class NewChallengeComponent implements OnInit {
 
     constructor(private http: HttpClient,
                 private router: Router,
-                private route: ActivatedRoute) {
+                private route: ActivatedRoute,
+                private mapService: MapService) {
     }
 
     ngOnInit() {
@@ -55,21 +57,36 @@ export class NewChallengeComponent implements OnInit {
             console.log(data);
             this.tulos = data.haaste[this.randomi].h;
             this.haasteId = data.haaste[this.randomi].id;
+            const place = data.haaste[this.randomi].place;
             localStorage.setItem('haasteId', this.haasteId);
+            if (place !== '') {
+                localStorage.setItem('placeType', place);
+            }
+
+
         });
     }
 
     acceptChallenge() {
-        localStorage.setItem('accepted', 'accepted' );
+        localStorage.setItem('accepted', 'accepted');
+        this.closeModal();
         this.navigateAccepted();
+        if (localStorage.getItem('placeType') !== '') {
+            this.mapService.refresh(15, 2000);
+        }
     }
 
     navigateInfo() {
         this.router.navigate([{outlets: {modalOutlet: ['info']}}], {skipLocationChange: true});
     }
+
     navigateAccepted() {
-        this.router.navigate([{outlets: {modalOutlet: ['acceptedChallenge']}}], {skipLocationChange: true});
+        setTimeout(() => {
+            this.router.navigate([{outlets: {modalOutlet: ['acceptedChallenge']}}], {skipLocationChange: true});
+        }, 500);
+
     }
+
 
     closeModal() {
         (<HTMLElement>document.querySelector('app-logo-box')).style.filter = 'blur(0px)';

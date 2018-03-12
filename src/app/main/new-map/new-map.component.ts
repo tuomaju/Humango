@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ViewChild} from '@angular/core';
 import {} from '@types/googlemaps';
+import {MapService} from '../../map.service';
 
 @Component({
     selector: 'app-new-map',
@@ -10,115 +11,57 @@ import {} from '@types/googlemaps';
 export class NewMapComponent implements OnInit {
 
 
-    @ViewChild('gmap') gmapElement: any;
-    map: google.maps.Map;
+    name = 'asd';
 
-    lat: any;
-    lng: any;
+    @ViewChild('gmap') gmapElement: any;
+
     x = document.querySelector('#gmap');
 
+    constructor(public mapService: MapService) {
+    }
 
     ngOnInit() {
 
-        this.lat = localStorage.getItem('latitude');
-        this.lng = localStorage.getItem('longitude');
+        this.mapService.lat = localStorage.getItem('latitude');
+        this.mapService.lng = localStorage.getItem('longitude');
 
-        if (!this.lat) {
-            this.lat = 60.186332588;
-            this.lng = 24.93749625;
+        if (!this.mapService.lat) {
+            this.mapService.lat = 60.186332588;
+            this.mapService.lng = 24.93749625;
         }
 
 
         this.getLocation();
 
 
-        setTimeout(() => {
+        this.mapService.mapElement = this.gmapElement.nativeElement;
 
-            const location = new google.maps.LatLng(this.lat, this.lng);
+        this.mapService.location = new google.maps.LatLng(this.mapService.lat, this.mapService.lng);
+
+        const location = new google.maps.LatLng(this.mapService.lat, this.mapService.lng);
 
 
-            const destinationMarker = {
-                url: './assets/img/logo.svg',
-                scaledSize: new google.maps.Size(42, 42),
-                origin: new google.maps.Point(0, 0),
-                anchor: new google.maps.Point(20, 46)
+        // this.initMap(location, 15);
 
-            };
 
-            this.initMap(location, 15);
+        this.mapService.initMap(this.mapService.location, 15, this.mapService.mapElement);
 
-            this.searchNearby(this.map, location, 700, localStorage.getItem('placeType'), destinationMarker);
+        this.mapService.createMarker(this.mapService.location, this.mapService.map);
 
-        }, 250);
+        this.mapService.searchNearby(this.mapService.map, this.mapService.location, 2000, localStorage.getItem('placeType'), this.mapService.destinationMarker);
+
+
+        // this.searchNearby(this.mapService.map, location, 700, localStorage.getItem('placeType'), destinationMarker);
+
 
     }
 
-    setPlaceStype(type) {
-        localStorage.setItem('placeType', type);
-    }
-
-    initMap(position, zoom) {
-        this.map = new google.maps.Map(this.gmapElement.nativeElement, {
-            disableDefaultUI: true,
-            center: position,
-            zoom: zoom,
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-            styles: [{}]
-        });
-
-        const userMarker = {
-            url: './assets/img/loc.png',
-            scaledSize: new google.maps.Size(26, 42),
-            origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(13, 42)
-        };
-
-        this.createMarker(new google.maps.LatLng(this.lat, this.lng), this.map);
+    refresh() {
+        this.mapService.setPlaceStype(this.name);
+        this.mapService.refresh(15, 2000);
 
     }
 
-    createRadius(map, position, radius) {
-        const cityCircle = new google.maps.Circle({
-            strokeColor: '#283F3B',
-            strokeOpacity: 0.1,
-            strokeWeight: 0,
-            fillColor: '#54C27B',
-            fillOpacity: 0.15,
-            map: map,
-            center: position,
-            radius: radius
-        });
-    }
-
-
-    createMarker(position, map, icon?) {
-        const marker = new google.maps.Marker({
-            position: position,
-            map: map,
-            animation: google.maps.Animation.DROP,
-            icon: icon
-        });
-    }
-
-
-    searchNearby(map, location, radius, type, markerType) {
-
-        const service = new google.maps.places.PlacesService(map);
-
-        service.nearbySearch({
-            location: location,
-            radius: radius,
-            type: type
-        }, (results, status) => {
-            if (status === google.maps.places.PlacesServiceStatus.OK) {
-                for (let i = 0; i < results.length; i++) {
-                    this.createMarker(new google.maps.LatLng(results[i].geometry.location.lat(), results[i].geometry.location.lng()),
-                        map,
-                        markerType);
-                }
-            }
-        });
-    }
 
     getLocation() {
         if (navigator.geolocation) {

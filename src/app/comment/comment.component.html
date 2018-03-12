@@ -1,4 +1,7 @@
 <p id="back" (click)="closeModal()">×</p>
-<p>
-  comment works!
-</p>
+<form id="palaute" name="palaute" #luoData="ngForm" (ngSubmit) = "tallennaPalaute(luoData.value)"> PALAUTE
+  <textarea name="name" id="name" placeholder={{placeholder}} ngModel></textarea>
+  <input type="submit" id="btn" name="btn" class="btn" value="PALAUTA">
+</form>
+<br>
+<h3 *ngIf = "isAdded" >{{palauteOnnistui}}</h3>
