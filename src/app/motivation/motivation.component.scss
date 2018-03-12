@@ -6,7 +6,7 @@
   height: 100%;
   width: 100%;
   overflow: auto;
-
+background-color: $light-grey;
 }
 
 .back {
@@ -23,28 +23,29 @@ a {
   height: 100%;
   // width: 100%;
   margin: 1rem;
-  margin-top: 0;
   margin-bottom: 4rem;
 
   display: flex;
   flex-direction: column;
 
   .box {
-    background-color: $light-grey;
+    background-color: $dark-grey;
     border-radius: 3px;
     margin-bottom: 1rem;
   }
   h2 {
-    color: $dark-grey;
+    color: $light-grey;
     font-style: italic;
     text-align: center;
     margin-top: 0;
   }
 #mottoEdited {
   border: 1px solid transparent;
+  padding: 0 1rem;
 }
 #tavoiteEdited {
   border: 1px solid transparent;
+  padding: 0 1rem;
 
 }
 
@@ -57,19 +58,20 @@ a {
 
   p {
     text-align: center;
-    color: $dark-grey;
+    color: $light-grey;
   }
 
   #linkit {
-    overflow: auto;
+
     background-color: $dark-grey;
     color: $light-grey;
     border-radius: 3px;
-    margin-bottom: 1rem;
+
     h4 {
       color: $light-grey;
       width: 100%;
       text-align: center;
+      margin-top: 1rem;
     }
     ul {
       li {
@@ -86,7 +88,7 @@ a {
     height: 30%;
 
     h4 {
-      color: $dark-grey;
+      color: $light-grey;
       text-align: center;
       margin-bottom: 0;
       width: calc(100% - 3rem);

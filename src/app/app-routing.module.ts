@@ -36,6 +36,10 @@ const routes: Routes = [
                 path: 'history',
                 component: HistoryComponent,
                 outlet: 'historyOutlet'
+            },
+            {   path: 'motivation',
+                component: MotivationComponent,
+                outlet: 'historyOutlet'
             }
         ]
     },

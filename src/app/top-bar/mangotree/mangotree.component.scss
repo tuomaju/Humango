@@ -10,6 +10,8 @@
 //  background-repeat: no-repeat;
   margin-bottom: 3rem;
   overflow: hidden;
+  background-color: #57cb76;
+
 }
 .top {
   display: flex;
@@ -30,19 +32,21 @@ main {
   height: 100%;
   display: flex;
   white-space:nowrap;
-  width: calc(100% - 6rem);
+  width: calc(100% - 0rem);
   justify-content: center;
 
   video {
     display: none;
-    top:0;
-    bottom: 0;
+
    transform: translateX(-1%);
    // height: 85%;
-    background-color: $primary-green;
+    background-color: #57cb76;
     // background-image: url('../../../assets/img/puupaikallaan1_3.mp4');
     background-position: center center;
     background-size: contain;
+    width: 240%;
+    margin-right: 2rem;
+    margin-top: -2rem;
   }
 }
 

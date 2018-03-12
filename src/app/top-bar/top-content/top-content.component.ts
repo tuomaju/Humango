@@ -31,10 +31,13 @@ export class TopContentComponent implements OnInit {
     }
 
     navigateMangotree() {
+        (<HTMLElement>document.querySelector('app-top-bar')).style.backgroundColor = '#57cb76';
         this.router.navigate([{outlets: {topOutlet: ['mangotree']}}], {skipLocationChange: true});
+
     }
     navigateMotivation() {
-        this.router.navigate([{outlets: {topOutlet: ['motivation']}}], {skipLocationChange: true});
+        this.router.navigate([{outlets: {historyOutlet: ['motivation']}}], {skipLocationChange: true, relativeTo: this.route});
+        this.changeColour();
     }
     changeColour() {
         (<HTMLElement>document.querySelector('#routerContainer')).style.backgroundColor = '#E7E5DF';

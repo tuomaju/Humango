@@ -8,14 +8,11 @@
   justify-content: space-evenly;
   align-items: center;
 
-
-
   width: 100%;
   height: 100%;
 }
 
-
-:host{
+:host {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,36 +20,34 @@
   width: 100%;
   height: 100%;
 
+  #topButtons {
 
-
-
-#topButtons {
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 2rem;
-  width: 100%;
-  height: 5rem;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+    width: 100%;
+    height: 5rem;
+  }
   #routeTree {
 
-    padding: 0.8rem;
+    // padding: 0.8rem;
     margin: 1rem;
     width: 6rem;
     height: 6rem;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 2px;
-
     color: $dark-grey;
     background-color: $light-grey;
-
+    // box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.45);
     img {
 
-     // padding: 0;
-
-     // width: 6rem;
+      // padding: 0;
+      height: 3rem;
+      width: 3rem;
     }
   }
 
@@ -67,7 +62,6 @@
       margin-top: 2rem;
       margin-bottom: 1rem;
       color: $dark-grey;
-      width: 80%;
       text-align: center;
     }
 
@@ -81,7 +75,7 @@
     height: 100%;
 
     margin: 2rem;
-    margin-top:0;
+    margin-top: 0;
     padding-bottom: 1rem;
     margin-bottom: 4rem;
     border-radius: 3px;
@@ -97,7 +91,7 @@
 
       width: 100%;
       height: 4rem;
-
+      font-size: 150%;
       border-radius: 3px 3px 0 0;
 
       background-color: $dark-grey;
@@ -109,7 +103,7 @@
         border-radius: 3px 0 0 0;
       }
 
-      #settings {
+      #motivation {
         @extend %historySettings;
         background-color: $light-grey;
         color: $dark-grey;
@@ -119,6 +113,5 @@
     }
 
   }
-
 
 }

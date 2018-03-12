@@ -19,6 +19,7 @@ export class TopBarComponent implements OnInit {
     }
 
     closeTop() {
+        (<HTMLElement>document.querySelector('app-top-bar')).style.backgroundColor = '#54C27B';
         (<HTMLElement>document.querySelector('app-top-bar')).style.top = 'calc(-100%)';
         (<HTMLElement>document.querySelector('app-main')).style.filter = 'blur(0px)';
         setTimeout(() => {

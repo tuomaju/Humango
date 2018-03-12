@@ -124,6 +124,7 @@ export class MangotreeComponent implements OnInit {
 
 
     navigateTopContent() {
+        (<HTMLElement>document.querySelector('app-top-bar')).style.backgroundColor = '#54C27B';
         this.router.navigate([{outlets: {topOutlet: ['topContent']}}], {skipLocationChange: true});
     }
 }
