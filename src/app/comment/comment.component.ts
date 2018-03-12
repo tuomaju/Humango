@@ -19,7 +19,7 @@ export class CommentComponent implements OnInit {
 
     palauteOnnistui = 'Hyvää Työtä!';
     isAdded = false;
-    palauteObj: object = {};
+    palauteObj: object;
     placeholder: string;
 
     ngOnInit() {
@@ -39,7 +39,7 @@ export class CommentComponent implements OnInit {
             this.isAdded = true;
             console.log(this.palauteObj);
             console.log(res);
-            // this.haasteet.palauteObj = this.palauteObj;
+            this.haasteet.palauteObj.push(this.palauteObj);
         });
         localStorage.removeItem('done');
         localStorage.removeItem('haasteId');

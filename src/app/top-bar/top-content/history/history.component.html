@@ -1,6 +1,6 @@
 
 <ul>
-  <li *ngFor = "let palaute of this.haasteet.palauteObj">
+  <li *ngFor = "let palaute of this.haasteet.palauteObj | reverse">
     {{palaute.palaute}}
   </li>
 </ul>
