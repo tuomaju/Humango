@@ -11,14 +11,17 @@
   overflow: hidden;
 
   #mapTest {
-    position: absolute;
-    top: 4rem;
+
+      position: absolute;
+    top: 6rem;
     left: 0;
     padding: 1rem;
 
-    width: 100%;
 
-    background-color: rgba(204, 75, 55, 1);
+    margin:auto ;
+
+    background-color: rgba(204, 75, 55, 0.8);
+    border-radius: 5px;
 
     z-index: 2;
 
@@ -42,6 +45,7 @@
   #gmap {
     height: calc(100% + 2rem);
     width: 100%;
+    padding: 0;
     background-color: $primary-green;
   }
 }

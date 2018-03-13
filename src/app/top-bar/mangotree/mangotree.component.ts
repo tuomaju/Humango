@@ -1,3 +1,4 @@
+
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {PointsService} from '../../points.service';
@@ -28,16 +29,19 @@ export class MangotreeComponent implements OnInit {
         document.querySelector('video').addEventListener('onended', () => {
             this.video2();
         });
-
     }
 
     whatVideo() {
-        this.videosrc = './assets/img/puupaikallaan1_3.mp4';
         if (localStorage.getItem('growth') === '1') {
-            this.videosrc = './assets/img/mangopuu2tausta.mp4';
+            this.videosrc = './assets/img/puupaikallaan2_2.mp4';
+        } else if (localStorage.getItem('growth') === '2') {
+            this.videosrc = './assets/img/puupaikallaan3_1.mp4';
+        } else if (localStorage.getItem('growth') === '3') {
+            this.videosrc = './assets/img/puupaikallaan4_1.mp4';
+        } else {
+            this.videosrc = './assets/img/puupaikallaan1_4.mp4';
         }
     }
-
 
     pointsBar() {
         document.getElementById('progressBar').style.width = this.currentPoints / this.targetPoints * 100 + '%';
@@ -48,11 +52,13 @@ export class MangotreeComponent implements OnInit {
         this.currentPoints = this.pointsService.getPoints();
         if (localStorage.getItem('growth') === '1') {
             this.targetPoints = 20;
+        } else if (localStorage.getItem('growth') === '2') {
+            this.targetPoints = 30;
+        } else if (localStorage.getItem('growth') === '3') {
+            this.targetPoints = 40;
         } else {
             this.targetPoints = 10;
         }
-
-
     }
 
     growButton() {
@@ -74,7 +80,13 @@ export class MangotreeComponent implements OnInit {
     }
 
     video2() {
-        document.querySelector('video').src = './assets/img/mangopuu2tausta.mp4';
+        if (localStorage.getItem('growth') === '1') {
+            document.querySelector('video').src = './assets/img/puupaikallaan2_2.mp4';
+        } else if (localStorage.getItem('growth') === '2') {
+            document.querySelector('video').src = './assets/img/puupaikallaan3_1.mp4';
+        } else if (localStorage.getItem('growth') === '3') {
+            document.querySelector('video').src = './assets/img/puupaikallaan4_1.mp4';
+        }
         document.querySelector('video').loop = true;
     }
 
@@ -82,7 +94,13 @@ export class MangotreeComponent implements OnInit {
     grow() {
         if (this.currentPoints === this.targetPoints || this.currentPoints > this.targetPoints) {
             console.log(this.currentPoints);
-            document.querySelector('video').src = './assets/img/mangopuu1tausta.mp4';
+            if (localStorage.getItem('growth') === '1') {
+                document.querySelector('video').src = './assets/img/puukasvaa2.mp4';
+            } else if (localStorage.getItem('growth') === '2') {
+                document.querySelector('video').src = './assets/img/puukasvaa3.mp4';
+            } else {
+                document.querySelector('video').src = './assets/img/puukasvaa1.mp4';
+            }
             document.querySelector('video').loop = false;
             setTimeout(() => {
                 this.video2();
@@ -90,7 +108,13 @@ export class MangotreeComponent implements OnInit {
             this.currentPoints = this.currentPoints - this.targetPoints;
             localStorage.setItem('points', this.currentPoints);
             console.log(this.currentPoints);
-            localStorage.setItem('growth', '1');
+            if (localStorage.getItem('growth') === '1') {
+                localStorage.setItem('growth', '2');
+            } else if (localStorage.getItem('growth') === '2') {
+                localStorage.setItem('growth', '3');
+            } else {
+                localStorage.setItem('growth', '1');
+            }
             document.getElementById('progressBox').style.backgroundColor = '#E7E5DF';
             document.getElementById('kasva').style.display = 'none';
             document.getElementById('progressNumbers').style.display = 'flex';

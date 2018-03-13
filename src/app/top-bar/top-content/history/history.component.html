@@ -1,6 +1,12 @@
-
+<h1>HIstoria</h1>
 <ul>
   <li *ngFor = "let palaute of this.haasteet.palauteObj | reverse">
-    {{palaute.palaute}}
+    <p  class="haasteNimi">{{this.haasteet.haasteetObj[palaute.haasteId].h}}</p>
+    <p class="haasteKommentti">{{palaute.palaute}}</p>
+    <p>{{palaute.suoritettu}}</p>
+  </li>
+  <li>
+    <p class="haasteNimi">Käy uudessa kaupassa</p>
+    <p class="haasteKommentti">Olin hyvä jee =)</p>
   </li>
 </ul>

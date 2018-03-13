@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute, Router} from '@angular/router';
 import {MapService} from '../../map.service';
+import {logging} from 'selenium-webdriver';
+import getLevel = logging.getLevel;
+import {HaasteetService} from '../../haasteet.service';
 
 @Component({
     selector: 'app-new-challenge',
@@ -14,11 +17,14 @@ export class NewChallengeComponent implements OnInit {
     haasteId: any;
     tulos = '';
     randomi: any;
+    level: number;
+    challengeNumber = 0;
 
     constructor(private http: HttpClient,
                 private router: Router,
                 private route: ActivatedRoute,
-                private mapService: MapService) {
+                private mapService: MapService,
+                private haasteet: HaasteetService) {
     }
 
     ngOnInit() {
@@ -46,7 +52,24 @@ export class NewChallengeComponent implements OnInit {
         });
     }
 
+    getLevel(number) {
+        if (localStorage.getItem('growth') === '1') {
+            this.level = 1;
+        } else if (localStorage.getItem('growth') === '2') {
+            this.level = 2;
+        } else if (localStorage.getItem('growth') === '3') {
+            this.level = 3;
+        } else {
+            this.level = 0;
+        }
+        while (this.level !== number) {
+            this.challengeNumber = Math.floor((Math.random() * 9) + 1);
+        }
+        // return this.challengeNumber;
+    }
+
     newChallenge() {
+
         this.randomi = Math.floor((Math.random() * 9) + 1);
 
         interface Myinterface {
@@ -54,15 +77,24 @@ export class NewChallengeComponent implements OnInit {
         }
 
         this.http.get<Myinterface>('assets/data.json').subscribe(data => {
+            for (this.randomi = Math.floor((Math.random() * 9) + 1); data.haaste[this.randomi].aste !== Number(localStorage.getItem('growth')); this.randomi = Math.floor((Math.random() * 9) + 1)) {
+                if (data.haaste[this.randomi].aste === localStorage.getItem('growth')) {
+                    break;
+                }
+            }
             console.log(data);
+            console.log(data.haaste[this.randomi].aste);
             this.tulos = data.haaste[this.randomi].h;
             this.haasteId = data.haaste[this.randomi].id;
             const place = data.haaste[this.randomi].place;
+
+            this.haasteet.haasteetObj = data.haaste;
             localStorage.setItem('haasteId', this.haasteId);
+
+            console.log(this.haasteet.haasteetObj[localStorage.getItem('haasteId')]);
             if (place !== '') {
                 localStorage.setItem('placeType', place);
             }
-
 
         });
     }

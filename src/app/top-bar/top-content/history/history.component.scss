@@ -31,6 +31,10 @@ ul {
     margin: 1rem 0 0 0;
     border-radius: 3px;
     list-style: none;
+
+    .haasteKommentti {
+      display: none;
+    }
   }
   p {
     margin: 0;
