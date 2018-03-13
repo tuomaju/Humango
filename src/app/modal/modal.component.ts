@@ -16,6 +16,7 @@ export class ModalComponent implements OnInit {
 
     ngOnInit() {
        // this.otaHaaste();
+        localStorage.setItem('growth', '1');
     }
 /*
     otaHaaste() {

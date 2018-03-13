@@ -24,6 +24,7 @@ import {PointsService} from './points.service';
 import {FormsModule} from '@angular/forms';
 import {MapService} from './map.service';
 import {HaasteetService} from './haasteet.service';
+import { ReversePipe } from './reverse.pipe';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import {HaasteetService} from './haasteet.service';
         InfoComponent,
         CommentComponent,
         AcceptedChallengeComponent,
-        NewMapComponent
+        NewMapComponent,
+        ReversePipe
     ],
     imports: [
         BrowserModule,

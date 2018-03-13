@@ -31,11 +31,11 @@ export class MangotreeComponent implements OnInit {
     }
 
     whatVideo() {
-        if (localStorage.getItem('growth') === '1') {
+        if (localStorage.getItem('growth') === '2') {
             this.videosrc = './assets/img/puupaikallaan2_2.mp4';
-        } else if (localStorage.getItem('growth') === '2') {
-            this.videosrc = './assets/img/puupaikallaan3_1.mp4';
         } else if (localStorage.getItem('growth') === '3') {
+            this.videosrc = './assets/img/puupaikallaan3_1.mp4';
+        } else if (localStorage.getItem('growth') === '4') {
             this.videosrc = './assets/img/puupaikallaan4_1.mp4';
         } else {
             this.videosrc = './assets/img/puupaikallaan1_4.mp4';
@@ -49,11 +49,11 @@ export class MangotreeComponent implements OnInit {
 
     getPoints() {
         this.currentPoints = this.pointsService.getPoints();
-        if (localStorage.getItem('growth') === '1') {
+        if (localStorage.getItem('growth') === '2') {
             this.targetPoints = 20;
-        } else if (localStorage.getItem('growth') === '2') {
-            this.targetPoints = 30;
         } else if (localStorage.getItem('growth') === '3') {
+            this.targetPoints = 30;
+        } else if (localStorage.getItem('growth') === '4') {
             this.targetPoints = 40;
         } else {
             this.targetPoints = 10;
@@ -79,11 +79,11 @@ export class MangotreeComponent implements OnInit {
     }
 
     video2() {
-        if (localStorage.getItem('growth') === '1') {
+        if (localStorage.getItem('growth') === '2') {
             document.querySelector('video').src = './assets/img/puupaikallaan2_2.mp4';
-        } else if (localStorage.getItem('growth') === '2') {
-            document.querySelector('video').src = './assets/img/puupaikallaan3_1.mp4';
         } else if (localStorage.getItem('growth') === '3') {
+            document.querySelector('video').src = './assets/img/puupaikallaan3_1.mp4';
+        } else if (localStorage.getItem('growth') === '4') {
             document.querySelector('video').src = './assets/img/puupaikallaan4_1.mp4';
         }
         document.querySelector('video').loop = true;
@@ -93,10 +93,12 @@ export class MangotreeComponent implements OnInit {
     grow() {
         if (this.currentPoints === this.targetPoints || this.currentPoints > this.targetPoints) {
             console.log(this.currentPoints);
-            if (localStorage.getItem('growth') === '1') {
+            if (localStorage.getItem('growth') === '2') {
                 document.querySelector('video').src = './assets/img/puukasvaa2.mp4';
-            } else if (localStorage.getItem('growth') === '2') {
+            } else if (localStorage.getItem('growth') === '3') {
                 document.querySelector('video').src = './assets/img/puukasvaa3.mp4';
+            } else if (localStorage.getItem('growth') === '4') {
+                document.querySelector('video').src = './assets/img/puupaikallaan4_1.mp4';
             } else {
                 document.querySelector('video').src = './assets/img/puukasvaa1.mp4';
             }
@@ -107,12 +109,14 @@ export class MangotreeComponent implements OnInit {
             this.currentPoints = this.currentPoints - this.targetPoints;
             localStorage.setItem('points', this.currentPoints);
             console.log(this.currentPoints);
-            if (localStorage.getItem('growth') === '1') {
-                localStorage.setItem('growth', '2');
-            } else if (localStorage.getItem('growth') === '2') {
+            if (localStorage.getItem('growth') === '2') {
                 localStorage.setItem('growth', '3');
+            } else if (localStorage.getItem('growth') === '3') {
+                localStorage.setItem('growth', '4');
+            } else if (localStorage.getItem('growth') === '4') {
+                localStorage.setItem('growth', '4');
             } else {
-                localStorage.setItem('growth', '1');
+                localStorage.setItem('growth', '2');
             }
             document.getElementById('progressBox').style.backgroundColor = '#E7E5DF';
             document.getElementById('kasva').style.display = 'none';

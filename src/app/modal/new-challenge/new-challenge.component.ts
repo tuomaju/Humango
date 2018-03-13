@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {MapService} from '../../map.service';
 import {logging} from 'selenium-webdriver';
 import getLevel = logging.getLevel;
+import {HaasteetService} from '../../haasteet.service';
 
 @Component({
     selector: 'app-new-challenge',
@@ -22,7 +23,8 @@ export class NewChallengeComponent implements OnInit {
     constructor(private http: HttpClient,
                 private router: Router,
                 private route: ActivatedRoute,
-                private mapService: MapService) {
+                private mapService: MapService,
+                private haasteet: HaasteetService) {
     }
 
     ngOnInit() {
@@ -58,7 +60,7 @@ export class NewChallengeComponent implements OnInit {
         } else if (localStorage.getItem('growth') === '3') {
             this.level = 3;
         } else {
-            this.level = 0;
+            this.level = 4;
         }
         while (this.level !== number) {
             this.challengeNumber = Math.floor((Math.random() * 9) + 1);
@@ -85,6 +87,7 @@ export class NewChallengeComponent implements OnInit {
             this.tulos = data.haaste[this.randomi].h;
             this.haasteId = data.haaste[this.randomi].id;
             const place = data.haaste[this.randomi].place;
+            this.haasteet.haasteetObj = data.haaste;
             localStorage.setItem('haasteId', this.haasteId);
             if (place !== '') {
                 localStorage.setItem('placeType', place);

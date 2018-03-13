@@ -21,6 +21,7 @@ export class CommentComponent implements OnInit {
     isAdded = false;
     palauteObj: object = {};
     placeholder: string;
+    aika = new Date().toLocaleDateString();
 
     ngOnInit() {
         localStorage.removeItem('accepted');
@@ -32,17 +33,21 @@ export class CommentComponent implements OnInit {
     tallennaPalaute(palaute) {
         this.palauteObj = {
             'palaute': palaute.name,
-            'haasteId': localStorage.getItem('haasteId')
+            'haasteId': localStorage.getItem('haasteId'),
+            'suoritettu': this.aika
         };
-        this.http.get('./palaute.php?json=' +
+        this.haasteet.palauteObj.push(this.palauteObj);
+        /* this.http.get('./palaute.php?json=' +
             JSON.stringify(this.palauteObj)).subscribe((res: Response) => {
             this.isAdded = true;
             console.log(this.palauteObj);
             console.log(res);
-            // this.haasteet.palauteObj = this.palauteObj;
+            this.haasteet.palauteObj.push(this.palauteObj);
         });
+        */
         localStorage.removeItem('done');
         localStorage.removeItem('haasteId');
+        this.closeModal();
     }
 
     changePlaceholder() {
