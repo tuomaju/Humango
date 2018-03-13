@@ -1,10 +1,8 @@
-
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {Http, Response, Headers} from '@angular/http';
 import {HaasteetService} from '../haasteet.service';
-
 
 
 @Component({
@@ -14,7 +12,7 @@ import {HaasteetService} from '../haasteet.service';
 })
 export class CommentComponent implements OnInit {
 
-    constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute, public haasteet: HaasteetService ) {
+    constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute, public haasteet: HaasteetService) {
     }
 
     palauteOnnistui = 'Hyvää Työtä!';
@@ -37,21 +35,25 @@ export class CommentComponent implements OnInit {
             'suoritettu': this.aika
         };
         this.haasteet.palauteObj.push(this.palauteObj);
-        /* this.http.get('./palaute.php?json=' +
-            JSON.stringify(this.palauteObj)).subscribe((res: Response) => {
-            this.isAdded = true;
-            console.log(this.palauteObj);
-            console.log(res);
-            this.haasteet.palauteObj.push(this.palauteObj);
+
+        this.http.get('assets/palaute.json').subscribe(data => {
+            let newData = JSON.stringify(data).replace('[', '');
+            newData = newData.replace(']', '');
+            this.http.get('./palaute.php?json=' +
+                '[' + newData + ',' + JSON.stringify(this.haasteet.palauteObj[this.haasteet.palauteObj.length - 1]) + ']').subscribe((res: Response) => {
+                this.isAdded = true;
+                console.log(this.palauteObj);
+                console.log(res);
+                this.haasteet.palauteObj.push('[' + newData + ',' + JSON.stringify(this.haasteet.palauteObj[this.haasteet.palauteObj.length - 1]) + ']');
+            });
         });
-        */
         localStorage.removeItem('done');
         localStorage.removeItem('haasteId');
         this.closeModal();
     }
 
     changePlaceholder() {
-        const number =  Math.floor((Math.random() * 7) + 1);
+        const number = Math.floor((Math.random() * 7) + 1);
         switch (number) {
             case 1:
                 this.placeholder = 'Miltä haasteen suorittaminen sinusta tuntui?';

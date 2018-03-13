@@ -10,7 +10,7 @@
 //  background-repeat: no-repeat;
   margin-bottom: 3rem;
   overflow: hidden;
-  background-color: #57cb76;
+  background-color: $primary-green;
 
 }
 .top {
@@ -40,7 +40,7 @@ main {
 
    transform: translateX(-1%);
    // height: 85%;
-    background-color: #57cb76;
+    background-color: $primary-green;
     // background-image: url('../../../assets/img/puupaikallaan1_3.mp4');
     background-position: center center;
     background-size: contain;

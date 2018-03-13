@@ -1,7 +1,7 @@
 <p id="back" (click)="closeModal()">×</p>
-<form id="palaute" name="palaute" #luoData="ngForm" (ngSubmit) = "tallennaPalaute(luoData.value)"> PALAUTE
+<form id="palaute" name="palaute" #luoData="ngForm" (ngSubmit) = "tallennaPalaute(luoData.value)"> <h2>Palaute</h2>
   <textarea name="name" id="name" placeholder={{placeholder}} ngModel></textarea>
-  <input type="submit" id="btn" name="btn" class="btn" value="PALAUTA">
+  <input type="submit" id="btn" name="btn" class="btn" value="Palauta">
 </form>
 <br>
 <h3 *ngIf = "isAdded" >{{palauteOnnistui}}</h3>

@@ -20,11 +20,12 @@ export class MangotreeComponent implements OnInit {
 
     ngOnInit() {
         this.pointsService.previousPoints();
-        this.getPoints();
+        this.getPoints('yes');
         this.pointsBar();
         this.growButton();
         this.whatVideo();
         this.playVideo();
+
         document.querySelector('video').addEventListener('onended', () => {
             this.video2();
         });
@@ -47,8 +48,10 @@ export class MangotreeComponent implements OnInit {
         console.log(document.getElementById('progressBar').style.width = this.currentPoints / this.targetPoints * 100 + '%');
     }
 
-    getPoints() {
-        this.currentPoints = this.pointsService.getPoints();
+    getPoints(service) {
+        if (service === 'yes') {
+            this.currentPoints = this.pointsService.getPoints();
+        }
         if (localStorage.getItem('growth') === '2') {
             this.targetPoints = 20;
         } else if (localStorage.getItem('growth') === '3') {
@@ -121,14 +124,16 @@ export class MangotreeComponent implements OnInit {
             document.getElementById('progressBox').style.backgroundColor = '#E7E5DF';
             document.getElementById('kasva').style.display = 'none';
             document.getElementById('progressNumbers').style.display = 'flex';
-            this.targetPoints = 20;
+          //  this.targetPoints = 20;
+            this.getPoints('no');
             this.pointsBar();
+            this.growButton();
         }
     }
 
 
     navigateTopContent() {
-        (<HTMLElement>document.querySelector('app-top-bar')).style.backgroundColor = '#54C27B';
+     //   (<HTMLElement>document.querySelector('app-top-bar')).style.backgroundColor = '#54C27B';
         this.router.navigate([{outlets: {topOutlet: ['topContent']}}], {skipLocationChange: true});
     }
 }
