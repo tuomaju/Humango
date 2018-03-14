@@ -1,0 +1,52 @@
+<!-- <a class="back" (click)="navigateTopContent()"><i class="fas fa-arrow-left"></i></a> -->
+<div class="container">
+    <div id="motto" class="box">
+        <div class="top">
+            <h4>Mottoni:</h4>
+            <div class="edit" id="editMotto" (click)="mottoEdit()">
+                <i id="mottoIcon" class="fas fa-pencil-alt"></i>
+            </div>
+            <div class="edit" id="editMotto2" (click)="mottoEdit2()">
+                <i id="mottoIcon2" class="far fa-arrow-alt-circle-down"></i>
+            </div>
+        </div>
+        <h2 id="mottoEdited"> {{ motto }}</h2>
+    </div>
+    <div id="tavoite" class="box">
+        <div class="top">
+            <h4>Tavoitteeni:</h4>
+            <div class="edit" id="editTavoite" (click)="tavoiteEdit()">
+                <i id="tavoiteIcon" class="fas fa-pencil-alt"></i>
+            </div>
+            <div class="edit" id="editTavoite2"(click)="tavoiteEdit2()">
+                <i id="tavoiteIcon2" class="far fa-arrow-alt-circle-down"></i>
+            </div>
+        </div>
+        <p id="tavoiteEdited">{{ tavoite }}</p>
+    </div>
+
+    <div id="linkit">
+        <h4>Hyödyllisiä linkkejä:</h4>
+        <ul>
+            <li>
+                <a target="_blank" href="http://masennusinfo.fi/ahdistuneisuushairiot/sosiaalisten-tilanteiden-pelko">Sosiaalinen
+                    jännitys</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.mielenterveysseura.fi/fi/mielenterveys/mielenterveyden-h%C3%A4iri%C3%B6t/sosiaalisten-tilanteiden-pelko-rajoittaa-el%C3%A4m%C3%A4%C3%A4">Sosiaalisten
+                    tilanteiden pelko</a>
+            </li>
+            <li>
+                <a target="_blank" href="http://www.uskallainnostua.fi/blogi/">Itsensä kehittäminen</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.oivamieli.fi/dashboard.php">Oiva</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://hurinapaja.wordpress.com/muuta/hapea-ja-sen-kaverit/">Nolostuminen</a>
+            </li>
+        </ul>
+    </div>
+
+
+</div>
