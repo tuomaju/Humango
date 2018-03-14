@@ -1,0 +1,14 @@
+<h1 id="title">Historia</h1>
+<ul>
+    <li *ngFor="let palaute of this.kommentit.reverse()">
+        <div class="haasteTopContainer">
+            <p class="haasteDate">{{palaute.suoritettu}}</p>
+            <p class="haasteNimi">{{ this.haasteet.haasteetObj[palaute.haasteId].h}}</p>
+        </div>
+        <div class="haasteBotContainer">
+            <p class="haasteKommentti">{{palaute.palaute}}</p>
+        </div>
+
+
+    </li>
+</ul>

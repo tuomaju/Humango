@@ -1,9 +1,34 @@
-/**
- * Foundation for Sites by ZURB
- * Version 6.3.0
- * foundation.zurb.com
- * Licensed under MIT Open Source
- */
+html {
+  width: 100%;
+  height: 100%;
+
+
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  background-color: #e8e8e8;
+
+text-decoration: none;
+  :focus {
+    outline: none;
+  }
+}
+
+
+
+
+
+
+
 
 // Dependencies
 @import "../node_modules/foundation-sites/_vendor/normalize-scss/sass/normalize";
@@ -25,7 +50,7 @@
 
 // Components
 @import '../node_modules/foundation-sites/scss/grid/grid';
-@import '../node_modules/foundation-sites/scss/typography/typography';
+//@import '../node_modules/foundation-sites/scss/typography/typography';
 @import '../node_modules/foundation-sites/scss/forms/forms';
 @import '../node_modules/foundation-sites/scss/components/visibility';
 @import '../node_modules/foundation-sites/scss/components/float';
@@ -74,7 +99,7 @@
   @else {
     @include foundation-flex-grid;
   }
-  @include foundation-typography;
+//  @include foundation-typography;
   @include foundation-forms;
   @include foundation-button;
   @include foundation-accordion;

@@ -1,0 +1,26 @@
+<div id="top">
+    <h1 id="userName">Masa Mallikas</h1>
+   <!-- <div id="moti" (click)="navigateMotivation()">
+        //<i class="fas fa-question"></i>
+        //  <p>Minun mangoni</p>
+        <img src="./assets/img/logo.svg">
+    </div> -->
+</div>
+
+    <div id="routeTree" (click)="navigateMangotree()">
+      <img src="./assets/img/tree-silhouette.svg">
+
+    </div>
+
+
+
+<div id="routerContainer">
+    <div id="tabContainer">
+
+        <a id="history" (click)="navigateHistory() "><i class="fas fa-list-ul"></i></a>
+
+        <a id="motivation" (click)="navigateMotivation()"><i class="fas fa-lightbulb"></i></a>
+
+    </div>
+    <router-outlet name="historyOutlet"></router-outlet>
+</div>

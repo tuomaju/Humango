@@ -1,0 +1,15 @@
+<div class="top">
+    <a (click)="navigateTopContent()"><i class="fas fa-arrow-left"></i></a>
+    <main>
+        <video autoplay loop id="video" [src] =  videosrc ></video>
+    </main>
+</div>
+<div id="progressBox" (click)="grow()" >
+    <div id="progressBar"></div>
+    <p id="kasva">KASVA</p>
+    <div id="progressNumbers">
+        <p id="progressNumber"> {{ currentPoints }}</p>
+        <p>/</p>
+        <p id="progressGoal">{{ targetPoints }}</p>
+    </div>
+</div>
